@@ -1,15 +1,15 @@
 name: Build A15 GS201 Kernel
 
 on:
-  push:  # Trigger the workflow when changes are pushed to the repository
+  push:
     branches:
-      - main  # Replace with the branch name you want to monitor
-      - development  # Add additional branches if needed
-  pull_request:  # Trigger the workflow for pull requests
+      - main  # Replace with your target branch
+      - development  # Add additional branches as needed
+  pull_request:
     branches:
       - main
-  schedule:  # Trigger the workflow on a schedule (e.g., daily at midnight UTC)
-    - cron: '0 0 * * *'
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
 
 jobs:
   build-kernel-a15-gs201-kernelsu-susfs:
@@ -69,7 +69,3 @@ jobs:
         with:
           name: kernel-build-artifacts
           path: A15_Sultan_KernelSU_SUSFS_GS201.zip
-
-          name: kernel-gs201
-          path: |
-            *.zip
